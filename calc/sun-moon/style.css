@@ -1,0 +1,75 @@
+html, body
+{
+font-family: Arial, Helvetica, sans-serif;
+padding-bottom: 100px;
+}
+
+#links
+{
+margin: 0px;
+}
+
+h1
+{
+margin: 0px;
+}
+
+table, tr, td, th
+{
+border: 1px solid black;
+border-collapse: collapse;
+}
+
+fieldset
+{
+margin-top: 20px;
+}
+
+td, th
+{
+padding: 5px;
+}
+
+input[type=text]
+{
+border: 1px solid black;
+color: black;
+background-color: white;
+border-radius: 0px;
+font-family: Arial, Helvetica, sans-serif;
+font-size: 16px;
+padding: 5px;
+outline: none;
+}
+
+.iw0
+{
+width: 100px;
+}
+
+.iw1
+{
+width: 50px;
+}
+
+input[type=submit]
+{
+border: 1px solid black;
+color: black;
+background-color: white;
+border-radius: 0px;
+font-family: Arial, Helvetica, sans-serif;
+font-size: 16px;
+padding: 5px;
+outline: none;
+transition: all 0.1s linear;
+}
+
+input[type=submit]:hover
+{
+transition: all 0.1s linear;
+color: white;
+background-color: black;
+cursor: pointer;
+}
+

@@ -1,0 +1,21 @@
+#cont
+{
+	border: 1px solid black;
+	float: left;
+}
+
+#cont p
+{
+	margin: 20px;
+}
+
+#settings
+{
+	float: left;
+	margin: 0px 20px;
+}
+
+#settings p:first-child
+{
+	margin-top: 0px;
+}

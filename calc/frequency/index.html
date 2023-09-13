@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Frequency Calculator</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="../../style_common.css">
+</head>
+<body>
+<div id="back">
+	<a href="../../more"><img src="../../images/icon_back.png"><span>Back</span></a>
+</div>
+<h1>Frequency Calculator</h1>
+<div id="container">
+
+<div class="row" style="margin: 15px 0px;">
+	<label for="inputn" class="lbl">Precision: </label>
+	<input type="text" id="inputn" name="inputn" value="3" style="width: 20px;">
+</div>
+
+<table>
+	<tr>
+		<td><label for="inputv" class="lbl">Wave Velocity:</label></td>
+		<td><input type="text" id="inputv" name="inputv" value="299792458"></td>
+		<td>
+			<select id="unitv" class="selectunit">
+				<option value="1">m/s</option>
+			</select>
+		</td>
+		<td><span id="resultv"></span></td>
+	</tr>
+	<tr>
+		<td><label for="inputf" class="lbl">Frequency:</label></td>
+		<td><input type="text" id="inputf" name="inputf"></td>
+		<td>
+			<select id="unitf" class="selectunit">
+				<option value="1">Hz</option>
+				<option value="1000">KHz</option>
+				<option value="1000000" selected>MHz</option>
+				<option value="1000000000">GHz</option>
+				<option value="1000000000000">THz</option>
+			</select>
+		</td>
+		<td><span id="resultf"></span></td>
+	</tr>
+	<tr>
+		<td><label for="inputl" class="lbl">Wavelength:</label></td>
+		<td><input type="text" id="inputl" name="inputl"></td>
+		<td>
+			<select id="unitl" class="selectunit">
+				<option value="0.000001">um</option>
+				<option value="0.001">mm</option>
+				<option value="0.01">cm</option>
+				<option value="1">m</option>
+				<option value="1000" selected>km</option>
+			</select>
+		</td>
+		<td><span id="resultl"></span></td>
+	</tr>
+</table>
+
+<input type="button" id="btncalc" value="Calculate">
+</div>
+<script type="text/javascript" src="script.js"></script>
+</body>
+</head>

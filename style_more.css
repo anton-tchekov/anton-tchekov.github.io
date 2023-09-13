@@ -1,0 +1,189 @@
+body
+{
+	background-color: #222222;
+	color: #ffffff;
+	font-size: 16px;
+	font-family: monospace;
+	margin: 80px 80px;
+	line-height: 1.6em;
+}
+
+@media (pointer:none), (pointer:coarse)
+{
+	body
+	{
+		margin: 40px 5px 5px 5px;
+	}
+
+	img
+	{
+		max-width: calc(100% - 30px);
+	}
+}
+
+#header
+{
+	font-size: 11px;
+	max-width: 800px;
+	border-top: 1px dashed white;
+}
+
+#container
+{
+	width: 70%;
+	max-width: 600px;
+	font-size: 14px;
+}
+
+h2
+{
+	font-size: 22px;
+	margin-top: 20px;
+	margin-bottom: 0px;
+	line-height: 1.6em;
+}
+
+h3
+{
+	margin: 0px;
+	margin-top: 10px;
+}
+
+p
+{
+	margin: 8px 0px;
+}
+
+a
+{
+	text-decoration: inherit;
+	color: #ffffff;
+	background-color: #444444;
+	padding: 0px 4px;
+}
+
+a:hover
+{
+	color: #444444;
+	background-color: #ffffff;
+}
+
+.ident
+{
+	margin-left: 20px;
+	max-width: 800px;
+}
+
+#footer
+{
+	font-size: 11px;
+	max-width: 800px;
+	margin-top: 40px;
+	margin-bottom: 40px;
+	padding-top: 20px;
+	border-top: 1px dashed white;
+}
+
+#homeb
+{
+	margin: 0px;
+	position: absolute;
+	top: 10px;
+	left: 10px;
+}
+
+#loginb
+{
+	margin: 0px;
+	position: fixed;
+	top: 10px;
+	right: 10px;
+}
+
+#upb
+{
+	margin: 0px;
+	position: fixed;
+	bottom: 10px;
+	right: 10px;
+}
+
+#img_email
+{
+	display: inline;
+	vertical-align: text-bottom;
+}
+
+#lfrm
+{
+	width: 200px;
+}
+
+.lin
+{
+	border: 0px;
+	border-bottom: 2px solid #444444;
+	font-family: monospace;
+	font-size: 1em;
+	background-color: #333333;
+	outline: none;
+	color: #ffffff;
+	padding: 2px;
+	width: 196px;
+}
+
+.lin:focus
+{
+	background-color: #444444;
+}
+
+.lbt
+{
+	border: none;
+	text-decoration: none;
+	color: #ffffff;
+	background-color: #444444;
+	padding: 0px 4px;
+	font-family: monospace;
+	font-size: 1em;
+	margin-top: 10px;
+	float: right;
+}
+
+.lbt:hover
+{
+	color: #444444;
+	background-color: #ffffff;
+	cursor: pointer;
+}
+
+.ll
+{
+	margin-bottom: 0px;
+}
+
+.img-right
+{
+	float: right;
+}
+
+ul
+{
+	list-style: none;
+	margin-left: 10px;
+	padding-left: 10px;
+}
+
+ul li
+{
+	padding-left: 1em;
+	text-indent: -1em;
+}
+
+ul li:before
+{
+	content: ">";
+	padding-right: 10px;
+}
+
+

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sun-Earth-Moon Orbit</title>
+<link rel="stylesheet" href="style.css" type="text/css">
+<link rel="stylesheet" type="text/css" href="../../style_common.css">
+
+</head>
+<body>
+<div id="back">
+	<a href="../../more"><img src="../../images/icon_back.png"><span>Back</span></a>
+</div>
+
+<h1>Sun-Earth-Moon Orbit</h1>
+<p id="links">(<a href="#settings">Settings</a>,
+<a href="#output">Output</a>,
+<a href="#orbit">Orbit Segment</a>)</p>
+
+<fieldset id="settings">
+<legend>Settings</legend>
+<p>
+Sun Mass:
+<input type="text" id="mass_sun0" class="iw0" value="1.989">
+x 10 ^
+<input type="text" id="mass_sun1" class="iw1" value="30">
+kg
+</p>
+<p>
+Earth Mass:
+<input type="text" id="mass_earth0" class="iw0" value="5.972">
+x 10 ^
+<input type="text" id="mass_earth1" class="iw1" value="24">
+kg
+</p>
+<p>
+Moon Mass:
+<input type="text" id="mass_moon0" class="iw0" value="7.342">
+x 10 ^
+<input type="text" id="mass_moon1" class="iw1" value="22">
+kg (no effect)
+</p>
+<p>
+Distance Sun-Earth:
+<input type="text" id="dist_sun_earth0" class="iw0" value="1.496">
+x 10 ^
+<input type="text" id="dist_sun_earth1" class="iw1" value="11">
+m
+</p>
+<p>
+Distance Earth-Moon:
+<input type="text" id="dist_earth_moon0" class="iw0" value="3.84">
+x 10 ^
+<input type="text" id="dist_earth_moon1" class="iw1" value="8">
+m
+</p>
+<input type="submit" id="calc" value="Calculate">
+</fieldset>
+
+<fieldset id="output">
+<legend>Output</legend>
+<p>
+Gravitational force = Centrifugal force
+</p>
+<p>
+Orbital Velocity of the Earth around the Sun:
+<input type="text" id="vel_earth_sun" class="iw0" readonly>
+m/s
+</p>
+<p>
+Orbital Velocity of the Moon around the Earth:
+<input type="text" id="vel_moon_earth" class="iw0" readonly>
+m/s
+</p>
+<p>
+Orbital Velocity of the Moon around the Sun = Orbital Velocity of the Earth around the Sun ±
+<input type="text" id="vel_moon_sun" class="iw0" readonly>
+%
+</p>
+<p>
+Minimum:
+<input type="text" id="vel_moon_min" class="iw0" readonly>
+m/s
+</p>
+<p>
+Maximum:
+<input type="text" id="vel_moon_max" class="iw0" readonly>
+m/s
+</p>
+<p>Acceleration</p>
+<p>
+of the Sun:
+<input type="text" id="accel_sun" class="iw0" readonly>
+m/s2
+</p>
+<p>
+of the Earth:
+<input type="text" id="accel_earth" class="iw0" readonly>
+m/s2
+</p>
+<p>
+Ratio (Sun/Earth):
+<input type="text" id="accel_ratio" class="iw0" readonly>
+</p>
+<p>Orbital Period</p>
+<p>
+of the Earth:
+<input type="text" id="time_earth" class="iw0" readonly>
+d
+</p>
+<p>
+of the Moon:
+<input type="text" id="time_moon" class="iw0" readonly>
+d
+</p>
+</fieldset>
+
+<fieldset id="orbit">
+<legend>Orbit Segment</legend>
+<canvas width="640px" height="240px" id="canvas"></canvas>
+</fieldset>
+
+<script type="text/javascript" src="decimal.js"></script>
+<script type="text/javascript" src="script.js"></script>
+
+</body>
+</html>

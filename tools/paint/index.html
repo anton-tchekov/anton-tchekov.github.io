@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Paint</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+<link rel="stylesheet" type="text/css" href="../../style_common.css">
+</head>
+<body id="body">
+<div id="back">
+	<a href="../../more"><img src="../../images/icon_back.png"><span>Back</span></a>
+</div>
+<h1>Browser Paint</h1>
+<div id="controls">
+	<div id="icolor-wrapper">
+		<input type="color" id="icolor">
+	</div>
+	<input type="button" id="iclear" value="Clear">
+	<input type="range" value="5" min="1" max="100" id="isize">
+	<a href="#" id="isave" download="image.png">Save</a>
+	<p style="clear: both"></p>
+</div>
+<canvas id="canvas"  width="800" height="600"></canvas>
+<script type="text/javascript" src="script.js"></script>
+</body>
+</html>

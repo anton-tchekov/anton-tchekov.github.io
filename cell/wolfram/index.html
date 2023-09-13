@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Wolfram</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+<link rel="stylesheet" type="text/css" href="../../style_common.css">
+</head>
+<body>
+<div id="back">
+	<a href="../../more"><img src="../../images/icon_back.png"><span>Back</span></a>
+</div>
+<h1>Wolfram</h1>
+<div id="controls">
+	<table>
+		<tr>
+			<th>Pattern:</th>
+			<td>111</td>
+			<td>110</td>
+			<td>101</td>
+			<td>100</td>
+			<td>011</td>
+			<td>010</td>
+			<td>001</td>
+			<td>000</td>
+		</tr>
+		<tr>
+			<th>New state:</th>
+			<td><input type="checkbox" id="bit7" value="0"></td>
+			<td><input type="checkbox" id="bit6" value="1"></td>
+			<td><input type="checkbox" id="bit5" value="1"></td>
+			<td><input type="checkbox" id="bit4" value="0"></td>
+			<td><input type="checkbox" id="bit3" value="1"></td>
+			<td><input type="checkbox" id="bit2" value="1"></td>
+			<td><input type="checkbox" id="bit1" value="1"></td>
+			<td><input type="checkbox" id="bit0" value="0"></td>
+		</tr>
+	</table>
+	<div id="rb">
+		<span>Rule:</span>
+		<input type="text" id="rule" value="" readonly>
+	</div>
+	<input type="button" id="update" value="Update">
+</div>
+<canvas id="canvas" width="500" height="500"></canvas>
+<script type="text/javascript" src="script.js"></script>
+</body>
+</html>

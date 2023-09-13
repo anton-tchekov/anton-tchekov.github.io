@@ -1,0 +1,12 @@
+html, body
+{
+	margin: 0px;
+	padding: 0px;
+	background-color: white;
+}
+
+canvas
+{
+	border: 1px solid black;
+	background-color: white;
+}

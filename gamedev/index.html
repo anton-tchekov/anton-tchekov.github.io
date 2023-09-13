@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charser="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../style_more.css" type="text/css">
+<title>Game</title>
+</head>
+<body>
+
+<p id="homeb"><a href="../">Home</a></p>
+<div id="main" >
+
+<h1>School Game</h1>
+
+<img src="../images/game.png" alt="Screenshot">
+
+<h2>Downloads (Portable ZIP)</h2>
+
+<p>Downloads are currently unavailable</p>
+
+<!--
+
+<h3>Current Release Version 0.4</h3>
+
+<p class="space">Windows (EXE):
+	<a href="">64 bit</a>
+	<a href="">32 bit</a>
+</p>
+
+<p class="space">Linux (binary): <a href="#">64 bit</a></p>
+
+<p class="space">Host your own server (Linux): <a href="#">64 bit</a></p>
+
+-->
+
+<h2>Lambda Engine Specifications</h2>
+<p>Engine Source code on <a href="https://github.com/anton-tchekov/lambda-engine">GitHub</a></ü>
+<ul>
+	<li>Diffuse, Specular, Emissive and Normal Texture Maps</li>
+	<li>Glow and Transparency Effects</li>
+	<li>Character Animation</li>
+	<li>Custom Compressed File Format for Game Assets</li>
+	<li>Skybox (Cubemap)</li>
+	<li>Built-in Profiler</li>
+	<li>Screenshot Function</li>
+	<li>Optimized to reduce Context Switches and Draw Calls</li>
+	<li>3D Mouse Picking (Returns currently pointed at object, its texture coordinates and world coordinates)
+		<ul>
+			<li>3D Screens, Drawing on Surfaces</li>
+			<li>GPU Accelerated</li>
+			<li>Only 1x1 Pixel Render: Very Fast (MVP Matrix Hack)</li>
+		</ul>
+	</li>
+	<li>Shadow Volumes
+		<ul>
+			<li>Pros: Dynamic, Pixel Perfect, Hard Shadows, All Light Sources</li>
+			<li>Cons: Only Closed Geometry</li>
+		</ul>
+	</li>
+	<li>Cascaded Shadow Maps
+		<ul>
+			<li>Pros: Dynamic, Soft Shadows, Works with all Geometry</li>
+			<li>Cons: Only Directional Light (e.g. Sunlight)</li>
+		</ul>
+	</li>
+	<li>
+		Baked Shadows (Prerendered)
+		<ul>
+			<li>Pros: Best Performance and Quality</li>
+			<li>Cons: Static</li>
+		</ul>
+	</li>
+	<li>Physics Engine (Boxes, Stairs, Slopes etc.)
+		<ul>
+			<li>Time Scaling prevents glitches</li>
+			<li>The duration of a game tick is determined depending on the speed of the objects</li>
+		</ul>
+	</li>
+	<li>3D Audio (works with Headphones)</li>
+	<li>Network Support (TCP/UDP)</li>
+	<li>Interactive Screens (Offscreen Rendering)</li>
+</ul>
+<p>
+	Visit my <a href="blog/">GameDev Blog</a> for screenshots and more information.
+</p>
+
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="de">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Seven Segment Display</title>
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<link rel="stylesheet" type="text/css" href="../../style_common.css">
+	</head>
+	<body>
+		<div id="back">
+			<a href="../../more"><img src="../../images/icon_back.png"><span>Back</span></a>
+		</div>
+		<div id="hvcenter">
+			<div id="a" class="segment horizontal">
+				<div class="first"></div>
+				<div class="last"></div>
+			</div>
+			<div id="b" class="segment vertical">
+				<div class="first"></div>
+				<div class="last"></div>
+			</div>
+			<div id="c" class="segment vertical">
+				<div class="first"></div>
+				<div class="last"></div>
+			</div>
+			<div id="d" class="segment horizontal">
+				<div class="first"></div>
+				<div class="last"></div>
+			</div>
+			<div id="e" class="segment vertical">
+				<div class="first"></div>
+				<div class="last"></div>
+			</div>
+			<div id="f" class="segment vertical">
+				<div class="first"></div>
+				<div class="last"></div>
+			</div>
+			<div id="g" class="segment horizontal">
+				<div class="first"></div>
+				<div class="last"></div>
+			</div>
+			<div id="dp" class="segment"></div>
+			<table id="result">
+				<tr>
+					<th>Dec:</th>
+					<td id="dec"></td>
+				</tr>
+				<tr>
+					<th>Bin:</th>
+					<td id="bin"></td>
+				</tr>
+				<tr>
+					<th>Hex:</th>
+					<td id="hex"></td>
+				</tr>
+			</table>
+		</div>
+		<script type="text/javascript" src="script.js"></script>
+	</body>
+</html>

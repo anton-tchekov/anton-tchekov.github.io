@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charser="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="../../style_more.css">
+<title>Spieleentwicklung</title>
+</head>
+<body>
+<p id="homeb"><a href="../../">Home</a></p>
+<h2>Spieleentwicklung</h2>
+<div class="ident">
+	<h3>Screenshots</h3>
+
+	<img src="board.png" width="750px">
+
+	<p><strong>Baum</strong></p>
+
+	<img src="tree_render.png" width="750px">
+	<img src="tree_top.png" width="750px">
+
+	<p><strong>Counter Strike maps:</strong></p>
+
+	<img src="dust2_0.png">
+	<img src="dust2_1.png">
+
+	<img src="italy_0.png">
+	<img src="italy_1.png">
+
+	<p><strong>Interface:</strong></p>
+
+	<img src="menu.png">
+	<img src="settings.png">
+
+	<p><strong>Farbiges Licht:</strong></p>
+	<img src="scrn.png">
+
+	<p><strong>Schatten (Shadow Volume):</strong></p>
+	<img src="shadow.png">
+
+	<p><strong>Automatisch Generierte Textur für das rendern von Text:</strong></p>
+	<img src="font.png">
+
+	<p><strong>Alle Sprachen/Zeichen sind möglich (Unicode):</strong></p>
+	<img src="font2.png">
+
+	<h3>Schatten</h3>
+	<p>
+		Ich habe eigene (komprimierte) Dateiformate für 3D Modelle, Texturen und Audio-
+		Dateien erstellt, um das Laden zu vereinfachen und zu verschnellern, da sie
+		zusätzliche (vorberechnete) Informationen enthalten. Zum Beispiel eine Liste mit
+		mit allen Kanten eines Modells, was die Erstellung der Schatten vereinfacht. Sonst
+		müssten bei jedem Start die Kanten neu gefunden werden. Das bedeutet, dass jede der drei
+		Seiten eines Dreiecks mit den Seiten aller anderen Dreiecke verglichen werden müssen,
+		um zu bestimmen, welche Dreiecke eine Seite teilen.
+	</p>
+
+	<h3>Anti aliasing</h3>
+	<p>
+	(<a href="https://en.wikipedia.org/wiki/Fast_approximate_anti-aliasing" target="_blank">FXAA</a> und
+	<a href="https://en.wikipedia.org/wiki/Multisample_anti-aliasing" target="_blank">MSAA</a>)
+	sind Methoden die die Kanten glätten damit man die Pixel nicht sieht.
+	Mit MSAA werden die Pixel, die sich an den Kanten befinden an 2/4/8/16 Punkten
+	innerhalb des Pixels die Farben berechnet und daraus der Mittelwert gebildet.
+
+	Mit FXAA wird das Bild normal gerendert und danach mit einem Shader
+	an bestimmten Stellen leicht unscharf gemacht.
+
+	MSAA sieht besser aus und macht die Grafikkarte automatisch, kostet aber FPS.
+	Das Problem mit FXAA ist, dass es die Texturen teilweise unscharf macht.
+	</p>
+	<img src="aa.png">
+	<p><strong>kein Antialiasing:</strong></p>
+	<img src="noaa.png">
+	<p><strong>4x MSAA:</strong></p>
+	<img src="msaa.png">
+	<p><strong>FXAA:</strong></p>
+	<img src="fxaa.png">
+
+	<h3>Kollisionserkennung</h3>
+	<p>
+		Zu jedem 3D-Objekt wird ein Quader erstellt, der das Objekt vollständig einschließt.
+		Der Quader ist ist nach den Achsen des Koordinatensystems ausgerichtet
+		(nicht gedreht). Siehe <a href="https://developer.mozilla.org/en-US/docs/Games/Techniques/3D_collision_detection" target="_blank">Axis-aligned bounding boxes bei MDN</a>
+	</p>
+	<p>
+	<p><strong>Hinweis: Die Y-Achse ist die Hochachse</strong></p>
+		Kollisionen werden auf der X, Y und Z Achse getrennt geprüft, damit
+		der Spieler sich z.B. auf der X Achse weiterbewegen kann, wenn
+		die Bewegung auf der Z Achse gesperrt ist und damit man weiß wenn
+		der Spieler den Boden berührt (Kollision auf Y-Achse + Negative Geschwindigkeit auf der Y-Achse)
+		Dadurch kann dann eine Variable zurückgesetzt werden sodass man wieder springen
+		kann.
+	</p>
+	<p>
+		Wenn das Objekt bewegt, rotiert oder in der Größe verändert wird muss natürlich auch
+		der Quader (AABB) entsprechend angepasst werden.
+	</p>
+	<p>
+		Es funktioniert gut außer wenn etwas sich in den Spieler hineinbewegt,
+		denn dann hängt man darin fest bis es sich von selbst hinausbewegt hat.
+		Das liegt daran, dass ich bei einer Kollision einfach die Position des
+		Spielers auf die vorherige Position zurücksetzte.
+	</p>
+	<p>
+		Vielleicht könnte man ein <a href="https://de.wikipedia.org/wiki/Octree">Octree</a> benutzen wenn es sehr viele Objekte werden sollten.
+	</p>
+
+	<h3>Audio/Sound</h3>
+	<p>
+		Ich habe mit den Sound-Code experimentiert. OpenAL, die Bibliothek mit
+		der ich das mache, unterstützt 3D Audio, das heißt man kann Geräuschquellen
+		im Raum positionieren und ausrichten, sodass man es dann mit Kopfhörern so hört,
+		als würde das Geräusch wirklich von dem Ort aus kommen. Also wenn man weiter weg ist
+		dann wird das Geräusch leiser und wenn man links davon steht hört man es auf dem
+		rechten Ohr lauter als auf dem Linken und umgekehrt. Die Audiodaten müssen im richtigen
+		Format vorliegen (oder man muss sie umwandeln). Wenn sie das nicht sind, bekommt
+		man keinen Fehler, es funktioniert dann aber nicht nicht (kein Ton).<br>
+	Es gibt ein leises Rauschen, ich glaube das liegt an meinem Laptop und
+	nicht an einem Programmierfehler.
+	</p>
+
+	<h3>Andere</h3>
+	<p>
+		Ich habe eine Konfigurationsdatei erstellt (und dazugehörigen Parser) die
+		die Einstellungen speichert (z.B. Grafikeinstellungen). Die Wertepaare aus der Datei
+		liegen in einer Hashtabelle.
+	</p>
+	<p>
+		Ich habe einen Shader-Packer geschrieben (den Namen habe ich mir selbst ausgedacht).
+		Shader sind kleine Programme, die auf der Grafikkarte laufen und in der C-ähnlichen
+		Programmiersprache GLSL geschrieben werden. Es gibt mehrere verschiedene Arten von
+		Shadern, einmal den Vertex-Shader, der alle Ecken verarbeitet, den Fragment-Shader
+		(der auch Pixel-Shader genannt wird), der für jedes Pixel aufgerufen wird. Dann gibt
+		es noch Geometry-, Compute- usw. Shader die andere Funktionen erfüllen.
+		Shader müssen beim Programmstart immer neu kompiliert werden, damit dass Programm mit
+		verschiedenen Grafikkartenmodellen und Treibern funktioniert. Davor waren alle Shader
+		jeweils in 21 einzelnen Dateien gespeichert. Deshalb habe ich eine Anwendung programmiert,
+		die alle diese Dateien nimmt und in eine einzelne Datei überträgt und überflüssige
+		Leerzeichen, Kommentare usw. entfernt. (Damit die Datei möglichst klein wird).
+	Anschließend wird daraus ein string erstellt und direkt in die .EXE eingefügt.
+	</p>
+	<p>
+		Ich habe ein paar Sachen mit dem Debugging-Programm <a href="https://renderdoc.org/">RenderDoc</a> ausprobiert,
+		irgendwie funktioniert es nicht richtig/zeigt Fehler an die nicht existieren.
+		<strong>16.06.2020</strong>: Ich habe inzwischen herausgefunden, wie man renderdoc benutzt und es
+		hilft sehr in den Fällen wo nichts auf dem Bildschirm erscheint, weil man damit
+		alle Texturen/Buffer usw. betrachten kann und so überprüfen kann dass alles
+		korrekt geladen hat. Man kann damit auch Shader debuggen, aber das geht
+		leider nur mit DirectX.
+	</p>
+	<p>
+		Ich habe einige Sachen über Makefiles gelernt. Die Anweisungen join, addprefix,
+		addsuffix, dir und notdir waren besonders nützlich.
+	</p>
+	<p>
+		Ich habe eine Screenshot-Funktion implementiert.
+	</p>
+</div>
+</body>
+</html>

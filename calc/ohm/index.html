@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Ohm's Law Calculator</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="../../style_common.css">
+</head>
+<body>
+<div id="back">
+	<a href="../../more"><img src="../../images/icon_back.png"><span>Back</span></a>
+</div>
+<h1>Ohm's Law Calculator</h1>
+<div id="container">
+<p>Please fill out two fields.</p>
+
+<div class="row" style="margin-bottom: 15px;">
+	<label for="inputn" class="lbl">Precision: </label>
+	<input type="text" id="inputn" name="inputn" value="3" style="width: 20px;">
+</div>
+
+<table>
+	<tr>
+		<td><label for="inputu" class="lbl">Voltage U:</label></td>
+		<td><input type="text" id="inputu" name="inputu"></td>
+		<td>
+			<select id="unitu" class="selectunit">
+				<option value="0.000001">uV</option>
+				<option value="0.001">mV</option>
+				<option value="1" selected>V</option>
+				<option value="1000">kV</option>
+				<option value="1000000">MV</option>
+			</select>
+		</td>
+		<td><span id="resultu"></span></td>
+	</tr>
+	<tr>
+		<td><label for="inputi" class="lbl">Amperage I:</label></td>
+		<td><input type="text" id="inputi" name="inputi"></td>
+		<td>
+			<select id="uniti" class="selectunit">
+				<option value="0.000001">uA</option>
+				<option value="0.001">mA</option>
+				<option value="1" selected>A</option>
+				<option value="1000">kA</option>
+				<option value="1000000">MA</option>
+			</select>
+		</td>
+		<td><span id="resulti"></span></td>
+	</tr>
+	<tr>
+		<td><label for="inputr" class="lbl">Resistance R:</label></td>
+		<td><input type="text" id="inputr" name="inputr"></td>
+		<td>
+			<select id="unitr" class="selectunit">
+				<option value="0.000001">uOhm</option>
+				<option value="0.001">mOhm</option>
+				<option value="1" selected>Ohm</option>
+				<option value="1000">kOhm</option>
+				<option value="1000000">MOhm</option>
+			</select>
+		</td>
+		<td><span id="resultr"></span></td>
+	</tr>
+</table>
+
+<input type="button" id="btncalc" value="Calculate">
+</div>
+<script type="text/javascript" src="script.js"></script>
+</body>
+</head>

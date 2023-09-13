@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="style.css">
+<link rel="stylesheet" type="text/css" href="../../style_common.css">
+<title>Pixel Art Editor</title>
+</head>
+<body>
+<div id="back">
+	<a href="../../more"><img src="../../images/icon_back.png"><span>Back</span></a>
+</div>
+<div id="container">
+<div id="topcontrol">
+	<div class="controlrow">
+		<a id="btnclear" class="button" href="#">Delete</a>
+		<a id="btnsave" class="button" download>Save</a>
+		<a id="btnhelp" class="button">Help/Controls</a>
+		<input type="checkbox" id="chkgrid" name="chkgrid" checked>
+		<label for="chlgrid">Show grid</label>
+	</div>
+	<div class="controlrow">
+		<label for="inputpxw">Width:</label>
+		<input type="text" id="inputpxw" name="inputpxw" class="inputdef">
+		<label for="inputpxw">Height:</label>
+		<input type="text" id="inputpxh" name="inputpxh" class="inputdef">
+		<label for="inputpxw">Pixel size:</label>
+		<input type="text" id="inputpxsize" name="inputpxsize" class="inputdef">
+		<label for="inputprev">Preview/Output size:</label>
+		<input type="text" id="inputscale" name="inputscale" class="inputdef">
+		<a id="btnset" class="button" download>Update</a>
+	</div>
+</div>
+<div id="choosecolor"></div>
+<canvas id="canvas"></canvas>
+<div id="rightbar">
+	<div id="formcolor">
+		<div class="slidercont">
+			<label for="sliderred" class="sliderlabel">Red:</label>
+			<input type="text" id="inputred" name="inputred" class="inputcolor">
+			<input type="range" id="sliderred" name="sliderred" min="0" max="255">
+		</div>
+		<div class="slidercont">
+			<label for="slidergreen" class="sliderlabel">Green:</label>
+			<input type="text" id="inputgreen" name="inputgreen" class="inputcolor">
+			<input type="range" id="slidergreen" name="slidergreen" min="0" max="255">
+		</div>
+		<div class="slidercont">
+			<label for="sliderblue" class="sliderlabel">Blue:</label>
+			<input type="text" id="inputblue" name="inputblue" class="inputcolor">
+			<input type="range" id="sliderblue" name="sliderblue" min="0" max="255">
+		</div>
+		<div id="colorstack">
+			<input id="color_picker" type="color">
+			<span id="ictext">&lt; Choose Color &gt;</span>
+		</div>
+	</div>
+	<div id="resultcont">
+		<div>Preview:</div>
+		<canvas id="preview"></canvas>
+		<p id="result"></p>
+	</div>
+</div>
+</div>
+
+<div id="helpoverlay">
+<div id="helpcenter">
+<a id="btnhelpclose" class="button" href="#">X</a>
+<h3>Keyboard Controls</h3>
+<pre>
+W:     Move Up
+A:     Move Left
+S:     Move Down
+D:     Move Right
+Space: Set Pixel
+0-9:   Select Color
+R:     Select Red
+G:     Select Green
+B:     Select Blue
+C:     Choose Color
+</pre>
+</div>
+</div>
+<script type="text/javascript" src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,90 @@
+html, body
+{
+	margin: 0px;
+	padding: 0px;
+	font-family: monospace;
+}
+
+#hvcenter
+{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 156px;
+	height: 300px;
+}
+
+.segment
+{
+	position: absolute;
+}
+
+#a { top:   0px; left:  10px; }
+#b { top:  10px; left: 100px; }
+#c { top: 110px; left: 100px; }
+#d { top: 200px; left:  10px; }
+#e { top: 110px; left:   0px; }
+#f { top:  10px; left:   0px; }
+#g { top: 100px; left:  10px; }
+
+#dp
+{
+	width: 24px;
+	height: 24px;
+	border-radius: 12px;
+	background-color: gray;
+	top: 196px;
+	left: 130px;
+}
+
+.horizontal .first
+{
+	border-bottom: 10px solid gray;
+	border-left: 10px solid transparent;
+	border-right: 10px solid transparent;
+	height: 0;
+	width: 80px;
+	z-index:100;
+}
+
+.horizontal .last
+{
+	border-top: 10px solid gray;
+	border-left: 10px solid transparent;
+	border-right: 10px solid transparent;
+	height: 0;
+	width: 80px;
+	z-index:100;
+}
+
+.vertical .first
+{
+	border-right: 10px solid gray;
+	border-top: 10px solid transparent;
+	border-bottom: 10px solid transparent;
+	height: 80px;
+	width: 0;
+	z-index: 100;
+	float: left;
+}
+
+.vertical .last
+{
+	border-left: 10px solid gray;
+	border-top: 10px solid transparent;
+	border-bottom: 10px solid transparent;
+	height: 80px;
+	width: 0;
+	z-index: 100;
+	float: left;
+}
+
+#result
+{
+	font-family: monospace;
+	position: absolute;
+	top: 230px;
+	left: 0px;
+	text-align: left;
+}

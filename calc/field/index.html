@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="de">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="style.css" type="text/css">
+		<link rel="stylesheet" href="../../style_common.css" type="text/css">
+		<title>Particle in magnetic field</title>
+	</head>
+	<body>
+		<div id="back">
+			<a href="../../more"><img src="../../images/icon_back.png"><span>Back</span></a>
+		</div>
+		<h1>Particle in magnetic field</h1>
+		<div id="container">
+			<canvas id="canvas" width="500px" height="500px"></canvas>
+			<div id="controls">
+				<h2>Physical</h2>
+				<p>Particle Mass (kg):</p>
+				<input type="text" id="fld_mass">
+				<p>Particle Charge (C):</p>
+				<input type="text" id="fld_charge">
+				<p>Particle Velocity 0 (m/s):</p>
+				<input type="text" id="fld_v0">
+				<p>Magnetic flux density (T):</p>
+				<input type="text" id="fld_field">
+				<h2>Simulation</h2>
+				<p>Time Step (s):</p>
+				<input type="text" id="fld_time_step">
+				<p>Time End (s):</p>
+				<input type="text" id="fld_time_end">
+				<p>Scale X (pixel/m):</p>
+				<input type="text" id="fld_scale_x">
+				<p>Scale Y (pixel/m):</p>
+				<input type="text" id="fld_scale_y">
+
+				<p>
+					<input type="button" value="Update" id="btn_update">
+					<input type="button" value="Reset" id="btn_reset">
+				</p>
+			</div>
+		</div>
+		<script type="text/javascript" src="vector.js"></script>
+		<script type="text/javascript" src="script.js"></script>
+	</body>
+</html>

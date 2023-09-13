@@ -1,0 +1,69 @@
+html, body
+{
+	font-family: Helvetica, Arial, sans-serif;
+	margin: 0px;
+	padding: 0px;
+}
+
+#options
+{
+	width: 422px;
+	height: auto;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+#results
+{
+	z-index: 1000;
+	width: 100%;
+	height: 100%;
+	background-color: white;
+}
+
+#res
+{
+	z-index: 1001;
+	width: 100px;
+	height: 100px;
+	line-height: 100px;
+	text-align: center;
+	font-size: 80px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+label
+{
+	float: left;
+	display: block;
+	width: 200px;
+	height: 60px;
+	font-size: 60px;
+	line-height: 82px;
+	margin: 5px 0px;
+}
+
+#min, #max
+{
+	width: 200px;
+	padding: 10px;
+	font-size: 60px;
+	border: 1px solid #000;
+	margin: 5px 0px;
+}
+
+#submitBtn
+{
+	margin: 5px 0px;
+	font-size: 40px;
+	height: 82px;
+	width: 422px;
+	background-color: #fff;
+	color: #000;
+	border: 1px solid #000;
+}

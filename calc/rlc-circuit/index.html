@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="de">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<link rel="stylesheet" href="../../style_common.css" type="text/css">
+		<title>RLC-Simulator</title>
+	</head>
+	<body>
+		<div id="back">
+			<a href="../../more"><img src="../../images/icon_back.png"><span>Back</span></a>
+		</div>
+		<h1>RLC-Simulator</h1>
+		<div id="cont">
+			<canvas id="canvas" width="1000px" height="300px"></canvas>
+			<p>Graph: (black) Q;  (red) Q Dot</p>
+		</div>
+
+		<div id="settings">
+			<p><strong>RLC-Circuit Parameter:</strong></p>
+			<p>Voltage 0: <input type="text" id="fld-u"> Volt</p>
+			<p>Resistance: <input type="text" id="fld-r"> Ohm</p>
+			<p>Inductor: <input type="text" id="fld-l"> Henry</p>
+			<p>Capacitor: <input type="text" id="fld-c"> Farad</p>
+
+			<p><strong>Time Unit:</strong></p>
+			<p>Time Step: <input type="text" id="fld-delta-t"> Seconds</p>
+			<p>Time End: <input type="text" id="fld-end-t"> Seconds</p>
+
+			<p><strong>Graph:</strong></p>
+			<p>Step X: <input type="text" id="fld-step-x"> Pixel</p>
+			<p>Scale Y: <input type="text" id="fld-scale-y"></p>
+
+			<input type="button" id="btn-draw" value="Simulate">
+		</div>
+
+		<script type="text/javascript" src="script.js"></script>
+	</body>
+</html>
+

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="de">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Simulator</title>
+		<link rel="stylesheet" type="text/css" href="../style.css">
+		<link rel="shortcut icon" type="image/x-icon" href="../favicon.ico">
+	</head>
+	<body>
+		<canvas id="canvas" width="500px" height="500px"></canvas>
+		<script type="text/javascript">
+
+var canvas = document.getElementById("canvas");
+var ctx = canvas.getContext("2d");
+
+var v0 = 30;
+var angle = deg2rad(45);
+var g = -9.81;
+var x, y;
+var vx, vy;
+var t_end = 5.0;
+var t_step = 0.1;
+var scale = 10;
+var target_x = 20;
+var target_y = 40;
+
+var avalue = 0;
+var up = true;
+
+var min_angle = -1;
+var min_dist = 10000.0;
+
+function deg2rad(d)
+{
+	return d / 360 * (2 * Math.PI);
+}
+
+function x_pixel(vx)
+{
+	return vx * scale;
+}
+
+function y_pixel(vy)
+{
+	return canvas.height - vy * scale;
+}
+
+function sqr(x)
+{
+	return x * x;
+}
+
+function dist(x0, y0, x1, y1)
+{
+	return Math.sqrt(sqr(x1 - x0) + sqr(y1 - y0));
+}
+
+function simulate()
+{
+	ctx.strokeStyle = "red";
+	ctx.beginPath();
+	ctx.arc(x_pixel(target_x), y_pixel(target_y), 3, 0, 2 * Math.PI, false);
+	ctx.fillStyle = "blue";
+	ctx.fill();
+
+	ctx.beginPath();
+	ctx.moveTo(x_pixel(0), y_pixel(0));
+	x = 0;
+	y = 0;
+	vx = Math.cos(angle) * v0;
+	vy = Math.sin(angle) * v0;
+
+	for(t = 0.0; x_pixel(x) <= canvas.width && y_pixel(y) <= canvas.height; t += t_step)
+	{
+		vy += g * t_step;
+
+		x += vx * t_step;
+		y += vy * t_step;
+
+		var d = dist(x, y, target_x, target_y);
+		if(d < min_dist)
+		{
+			min_dist = d;
+			min_angle = avalue;
+		}
+
+		ctx.lineTo(x_pixel(x), y_pixel(y));
+	}
+
+	ctx.stroke();
+}
+
+function next()
+{
+	angle = deg2rad(avalue);
+
+	ctx.fillStyle = "white";
+	ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+	simulate();
+
+	if(up)
+	{
+		++avalue;
+		if(avalue == 90)
+		{
+			//up = false;
+
+			ctx.fillStyle = "white";
+			ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+			avalue = min_angle;
+			angle = deg2rad(avalue);
+			simulate();
+
+			ctx.font = "48px serif";
+			ctx.fillStyle = "black";
+			ctx.fillText("Solution: " + min_angle + "°", 10, 80);
+
+			return;
+		}
+	}
+	else
+	{
+		--avalue;
+		if(avalue == 0)
+		{
+			// up = true;
+			return;
+		}
+	}
+
+	setTimeout(next, 50);
+}
+
+next();
+
+		</script>
+	</body>
+</html>
